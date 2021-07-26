@@ -435,7 +435,7 @@ void YoloObjectDetector::setupNetwork(char* cfgfile, char* weightfile, char* dat
   demoThresh_ = thresh;
   demoHier_ = hier;
   fullScreen_ = fullscreen;
-  printf("YOLO\n");
+  printf("YOLO V4\n");
   net_ = load_network(cfgfile, weightfile, 0);
   set_batch_network(net_, 1);
 }
@@ -483,12 +483,12 @@ void YoloObjectDetector::yolo() {
 
   int count = 0;
   if (!demoPrefix_ && viewImage_) {
-    cv::namedWindow("YOLO", cv::WINDOW_NORMAL);
+    cv::namedWindow("YOLO V4", cv::WINDOW_NORMAL);
     if (fullScreen_) {
-      cv::setWindowProperty("YOLO", cv::WND_PROP_FULLSCREEN, cv::WINDOW_FULLSCREEN);
+      cv::setWindowProperty("YOLO V4", cv::WND_PROP_FULLSCREEN, cv::WINDOW_FULLSCREEN);
     } else {
-      cv::moveWindow("YOLO", 0, 0);
-      cv::resizeWindow("YOLO", 640, 480);
+      cv::moveWindow("YOLO V4", 0, 0);
+      cv::resizeWindow("YOLO V4", 640, 480);
     }
   }
 
